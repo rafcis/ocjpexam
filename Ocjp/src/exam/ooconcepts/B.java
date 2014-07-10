@@ -3,30 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ooconcepts;
+package exam.ooconcepts;
 
 /**
  *
  * @author rafcis
- * Does not compile, line 25, call to super must be first statement in constructor
+ * Compiler error, line 23
  */
 class A {
 
-    A() {
+    Integer print() {
         System.out.println("A");
-
+        return 0;
     }
 }
 
-class BB extends A {
+class B extends A {
 
-    BB() {
-        this(4);
-        super();
+    int print() {
+        super.print();
         System.out.println("B");
+        return 0;
     }
 
-    BB(int i) {
-        System.out.println("C");
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.print();
     }
 }

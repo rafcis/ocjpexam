@@ -3,37 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ooconcepts;
+package exam.ooconcepts;
 
 /**
  *
  * @author rafcis
- * Code does not compile, Test7 cannot be converted to SuperTest1, line 36
+ * Code does not compile, a method with default access cannot be overriden as protected
  */
-class SuperTest1 {
-
-    SuperTest1() throws Exception {
-    }
+class SuperTest {
 
     int f() {
         return 0;
     }
 }
 
-public class Test7 extends SuperTest {
+public class Test4 extends SuperTest {
 
     int i;
 
-    int f() {
+    protected int f() throws Error {
         return i;
     }
 
-    Test7(int i) {
+    Test4(int i) {
         this.i = i;
     }
 
     public static void main(String[] args) {
-        SuperTest1 t = new Test7(5);
+        SuperTest t = new Test4(5);
         System.out.println(t.f());
     }
 }
